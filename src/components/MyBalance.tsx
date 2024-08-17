@@ -12,7 +12,7 @@ const MyBalance: FunctionComponent<MyBalanceProps> = () => {
                     <p className=" text-xs my-1">My balance</p>
                     <p className=" text-xl font-bold">$921.48</p>
             </div>
-            <img src={logo} alt="Logo" className="w-10 h-10 m-4" />
+            <img src={logo} alt="Logo" className="w-12 h-12 my-4 mx-6" />
         </div>
     );
 }
