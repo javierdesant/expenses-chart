@@ -11,7 +11,7 @@ function App() {
 
         <Spending />
 
-        <div className="attribution text-center mt-5 text-xs font">
+        <div className=" attribution text-center mt-5 text-xs font">
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" className="hover:underline">Frontend Mentor</a>. 
             Coded by <a href="https://github.com/javierdesant" className="hover:underline">JavierDeSant</a>.
         </div>  

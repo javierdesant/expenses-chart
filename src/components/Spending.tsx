@@ -5,27 +5,28 @@ interface SpendingProps {
 }
  
 const Spending: FunctionComponent<SpendingProps> = () => {
-    return ( 
-
-        <div>
-            Spending - Last 7 days
-
-            mon
-            tue
-            wed
-            thu
-            fri
-            sat
-            sun
-
-            Total this month
-            $478.33
-
-            +2.4%
-            from last month
+    return (
+        <div className="flex">
+            <div className="h-28 w-96 mx-auto bg border-solid border-2 border-black">
+                <p className="font-dm-sans text-xs">
+                    Spending - Last 7 days
+                    <br />
+                    mon
+                    tue
+                    wed
+                    thu
+                    fri
+                    sat
+                    sun
+                    
+                    Total this month
+                    $478.33
+                    
+                    +2.4% from last month
+                </p>
+            </div>
         </div>
-        
-     );
+    );
 }
  
 export default Spending;
