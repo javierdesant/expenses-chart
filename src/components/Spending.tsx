@@ -3,13 +3,13 @@ import type { chartData } from '../types';
 import { formatCurrency } from "../helpers";
 
 interface SpendingProps {
-    data: chartData[];
+    data: chartData[]
+    monthExpenses: number
 }
- 
-const Spending: FunctionComponent<SpendingProps> = ({ data }) => {
+
+const Spending: FunctionComponent<SpendingProps> = ({ data, monthExpenses }) => {
 
     // const weekTotal = data.reduce((acc, item) => acc + item.amount, 0);
-    const monthTotal = 478.33;
     const weekMax = Math.max(...data.map(item => item.amount));
     
     const chartHeight = ( amount: number ) => { 
@@ -54,7 +54,7 @@ const Spending: FunctionComponent<SpendingProps> = ({ data }) => {
                     <div></div>
                     <p className=" col-span-2 text-neutral-medium-brown">Total this month</p>
                     <h1 className=" row-span-2 text-left text-4xl font-bold text-neutral-dark-brown">
-                        {formatCurrency(monthTotal)}
+                        {formatCurrency(monthExpenses)}
                     </h1>
                     <div className="row-span-2 text-right">
                         <h6 className="font-bold text-neutral-dark-brown">+2.4%</h6>
