@@ -1,5 +1,6 @@
 import MyBalance from "./components/MyBalance"
 import Spending from "./components/Spending"
+import chartData from "../data.json"
 
 function App() {
 
@@ -9,7 +10,9 @@ function App() {
 
           <MyBalance />
           <div className="m-2"></div>
-          <Spending />
+          <Spending 
+            data={chartData}
+          />
         <div className="attribution text-center mt-4 text-xs">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" className="hover:underline">Frontend Mentor</a>. 
           Coded by <a href="https://github.com/javierdesant" className="hover:underline">JavierDeSant</a>.

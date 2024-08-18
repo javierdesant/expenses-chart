@@ -1,11 +1,29 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
+import type { chartData } from '../types';
+import { formatCurrency } from "../helpers";
 
 interface SpendingProps {
-    
+    data: chartData[];
 }
  
-const Spending: FunctionComponent<SpendingProps> = () => {
+const Spending: FunctionComponent<SpendingProps> = ({ data }) => {
+
+    // const weekTotal = data.reduce((acc, item) => acc + item.amount, 0);
+    const monthTotal = 478.33;
+    const weekMax = Math.max(...data.map(item => item.amount));
+    
+    const chartHeight = ( amount: number ) => { 
+        if (!amount) return "0%";
+        return `${amount / weekMax * 100}%`;
+    }
+
+    const isBarBlue = (day: string): boolean => {
+        const weekday = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+        return weekday[new Date().getDay()] === day;
+    }
+    
     return (
+
         <div className="flex flex-col max-w-[450px] min-w-[340px] w-full h-[420px] py-7 p-2 box-border bg-neutral-very-pale-orange rounded-xl">
             <div className="w-11/12 h-full self-center">
 
@@ -13,22 +31,18 @@ const Spending: FunctionComponent<SpendingProps> = () => {
                 
                 <div className="flex flex-col h-full">
                     <div className="h-36 w-full flex items-end space-x-3 my-3">
-                        <div className="flex-1 h-1/2 bg-primary-soft-red rounded-sm "></div>
-                        <div className="flex-1 h-1/4 bg-primary-soft-red rounded-sm "></div>
-                        <div className="flex-1 h-3/4 bg-primary-soft-red rounded-sm "></div>
-                        <div className="flex-1 h-3/5 bg-primary-soft-red rounded-sm "></div>
-                        <div className="flex-1 h-4/5 bg-primary-soft-red rounded-sm "></div>
-                        <div className="flex-1 h-1/5 bg-primary-soft-red rounded-sm "></div>
-                        <div className="flex-1 h-full bg-primary-soft-red rounded-sm "></div>
+                        {data.map((item: chartData) => (
+                            <div 
+                                key={item.day} 
+                                className={`flex-1 rounded-sm`} 
+                                style={{ height: `${chartHeight(item.amount)}`, backgroundColor: isBarBlue(item.day) ? '#76b5bc' : '#ec775f' }}
+                            ></div>
+                        ))}
                     </div>
                     <div className="grid grid-cols-7 gap-2 text-xs text-neutral-medium-brown">
-                        <span className="flex justify-center">mon</span>
-                        <span className="flex justify-center">tue</span>
-                        <span className="flex justify-center">wed</span>
-                        <span className="flex justify-center">thu</span>
-                        <span className="flex justify-center">fri</span>
-                        <span className="flex justify-center">sat</span>
-                        <span className="flex justify-center">sun</span>
+                        {data.map((item: chartData) => (
+                            <span key={item.day} className="flex justify-center">{item.day}</span>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -40,7 +54,7 @@ const Spending: FunctionComponent<SpendingProps> = () => {
                     <div></div>
                     <p className=" col-span-2 text-neutral-medium-brown">Total this month</p>
                     <h1 className=" row-span-2 text-left text-4xl font-bold text-neutral-dark-brown">
-                        $478.33
+                        {formatCurrency(monthTotal)}
                     </h1>
                     <div className="row-span-2 text-right">
                         <h6 className="font-bold text-neutral-dark-brown">+2.4%</h6>
