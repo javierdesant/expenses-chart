@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         'dm-sans': ["DM Sans", 'sans-serif']
       },
-      backgroundColor: {
+      colors: {
         'primary-soft-red': 'hsl(10, 79%, 65%)',
         'primary-cyan': 'hsl(186, 34%, 60%)',
         'neutral-dark-brown': 'hsl(25, 47%, 15%)',
