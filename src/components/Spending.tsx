@@ -1,6 +1,7 @@
 import { FunctionComponent, useEffect } from "react";
 import type { chartData } from '../types';
 import { formatCurrency } from "../helpers";
+import useChart from "../hooks/useChart";
 
 interface SpendingProps {
     data: chartData[]
@@ -8,20 +9,9 @@ interface SpendingProps {
 }
 
 const Spending: FunctionComponent<SpendingProps> = ({ data, monthExpenses }) => {
-
-    // const weekTotal = data.reduce((acc, item) => acc + item.amount, 0);
-    const weekMax = Math.max(...data.map(item => item.amount));
     
-    const chartHeight = ( amount: number ) => { 
-        if (!amount) return "0%";
-        return `${amount / weekMax * 100}%`;
-    }
+    const { chartHeight, isBarBlue } = useChart();
 
-    const isBarBlue = (day: string): boolean => {
-        const weekday = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-        return weekday[new Date().getDay()] === day;
-    }
-    
     return (
 
         <div className="flex flex-col max-w-[450px] min-w-[340px] w-full h-[420px] py-7 p-2 box-border bg-neutral-very-pale-orange rounded-xl">
