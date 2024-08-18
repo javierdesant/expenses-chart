@@ -6,52 +6,45 @@ interface SpendingProps {
  
 const Spending: FunctionComponent<SpendingProps> = () => {
     return (
-        <div className="flex flex-col max-w-[800px] w-full h-[420px] py-8 box-border bg-neutral-very-pale-orange rounded-xl">
+        <div className="flex flex-col max-w-[450px] w-full h-[420px] py-7 p-2 box-border bg-neutral-very-pale-orange rounded-xl">
             <div className="w-11/12 h-full self-center">
-                <h1 className="text-xl font-dm-sans font-bold text-neutral-dark-brown">Spending - Last 7 days</h1>
+
+                <h1 className="text-2xl text-left font-dm-sans font-bold text-neutral-dark-brown mb-4">Spending - Last 7 days</h1>
                 
                 <div className="flex flex-col h-full">
-
-                    <div className="h-36 w-full flex items-end space-x-2 my-4">
-                        <div className="flex-1 h-full border border-solid border-black bg-red-500"></div>
-                        <div className="flex-1 h-full border border-solid border-black bg-blue-500"></div>
-                        <div className="flex-1 h-full border border-solid border-black bg-green-500"></div>
-                        <div className="flex-1 h-full border border-solid border-black bg-yellow-500"></div>
-                        <div className="flex-1 h-full border border-solid border-black bg-purple-500"></div>
-                        <div className="flex-1 h-full border border-solid border-black bg-pink-500"></div>
-                        <div className="flex-1 h-full border border-solid border-black bg-indigo-500"></div>
+                    <div className="h-36 w-full flex items-end space-x-3 my-3">
+                        <div className="flex-1 h-1/2 bg-primary-soft-red rounded-sm "></div>
+                        <div className="flex-1 h-1/4 bg-primary-soft-red rounded-sm "></div>
+                        <div className="flex-1 h-3/4 bg-primary-soft-red rounded-sm "></div>
+                        <div className="flex-1 h-3/5 bg-primary-soft-red rounded-sm "></div>
+                        <div className="flex-1 h-4/5 bg-primary-soft-red rounded-sm "></div>
+                        <div className="flex-1 h-1/5 bg-primary-soft-red rounded-sm "></div>
+                        <div className="flex-1 h-full bg-primary-soft-red rounded-sm "></div>
                     </div>
-                    
-                    <p className="font-dm-sans text-xs">
-                        mon
-                        tue
-                        wed
-                        thu
-                        fri
-                        sat
-                        sun 
-                    </p>
+                    <div className="grid grid-cols-7 gap-2 text-xs text-neutral-medium-brown">
+                        <span className="flex justify-center">mon</span>
+                        <span className="flex justify-center">tue</span>
+                        <span className="flex justify-center">wed</span>
+                        <span className="flex justify-center">thu</span>
+                        <span className="flex justify-center">fri</span>
+                        <span className="flex justify-center">sat</span>
+                        <span className="flex justify-center">sun</span>
+                    </div>
                 </div>
-
             </div>
 
-            <hr className="my-4 w-11/12 border-neutral-light-brown self-center" />
-            
+            <hr className="w-11/12 border-neutral-light-brown self-center" />
+
             <div className="flex flex-col font-dm-sans w-11/12 self-center">
-                <p className="text-neutral-medium-brown mb-2">
-                    Total this month
-                </p>
-                <div className="flex justify-between">
-                    <h1 className=" text-left text-5xl font-bold text-neutral-dark-brown">
+                <div className="grid grid-cols-2 grid-rows-4 items-end">
+                    <div></div>
+                    <p className=" col-span-2 text-neutral-medium-brown">Total this month</p>
+                    <h1 className=" row-span-2 text-left text-4xl font-bold text-neutral-dark-brown">
                         $478.33
                     </h1>
-                    <div>
-                        <h6 className=" text-right font-bold text-neutral-dark-brown">
-                            +2.4% 
-                        </h6>
-                        <p className=" text-right text-neutral-medium-brown">
-                            from last month
-                        </p>
+                    <div className="row-span-2 text-right">
+                        <h6 className="font-bold text-neutral-dark-brown">+2.4%</h6>
+                        <p className="text-neutral-medium-brown">from last month</p>
                     </div>
                 </div>
             </div>
