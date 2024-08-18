@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect } from "react";
+import { FunctionComponent } from "react";
 import type { chartData } from '../types';
 import { formatCurrency } from "../helpers";
 import useChart from "../hooks/useChart";
