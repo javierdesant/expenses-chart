@@ -6,10 +6,10 @@ interface SpendingProps {
  
 const Spending: FunctionComponent<SpendingProps> = () => {
     return (
-        <div className="flex flex-col max-w-[450px] w-full h-[420px] py-7 p-2 box-border bg-neutral-very-pale-orange rounded-xl">
+        <div className="flex flex-col max-w-[450px] min-w-[340px] w-full h-[420px] py-7 p-2 box-border bg-neutral-very-pale-orange rounded-xl">
             <div className="w-11/12 h-full self-center">
 
-                <h1 className="text-2xl text-left font-dm-sans font-bold text-neutral-dark-brown mb-4">Spending - Last 7 days</h1>
+                <h1 className="text-2xl text-left font-dm-sans font-bold text-neutral-dark-brown mb-7">Spending - Last 7 days</h1>
                 
                 <div className="flex flex-col h-full">
                     <div className="h-36 w-full flex items-end space-x-3 my-3">
@@ -33,7 +33,7 @@ const Spending: FunctionComponent<SpendingProps> = () => {
                 </div>
             </div>
 
-            <hr className="w-11/12 border-neutral-light-brown self-center" />
+            <hr className="w-11/12 mt-2 border-neutral-light-brown self-center" />
 
             <div className="flex flex-col font-dm-sans w-11/12 self-center">
                 <div className="grid grid-cols-2 grid-rows-4 items-end">
