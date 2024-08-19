@@ -17,16 +17,22 @@ const Spending: FunctionComponent<SpendingProps> = ({ data, monthExpenses }) => 
         <div className="flex flex-col max-w-[450px] min-w-[340px] w-full h-[420px] py-7 p-2 box-border bg-neutral-very-pale-orange rounded-xl">
             <div className="w-11/12 h-full self-center">
 
-                <h1 className="text-2xl text-left font-dm-sans font-bold text-neutral-dark-brown mb-7">Spending - Last 7 days</h1>
+                <h1 className="text-2xl text-left font-dm-sans font-bold text-neutral-dark-brown mb-10">Spending - Last 7 days</h1>
                 
                 <div className="flex flex-col h-full">
-                    <div className="h-36 w-full flex items-end space-x-3 my-3">
+                    <div className="h-32 w-full flex items-end space-x-4 my-3">
                         {data.map((item: chartData) => (
                             <div 
                                 key={item.day} 
-                                className={`flex-1 rounded-sm hover:opacity-80 transition-opacity duration-300 ease-in-out`} 
+                                className={"relative flex-1 rounded group hover:opacity-80 transition-opacity duration-300 ease-in-out"} 
                                 style={{ height: `${chartHeight(item.amount)}`, backgroundColor: isBarBlue(item.day) ? '#76b5bc' : '#ec775f'}}
-                            ></div>
+                            >
+                                <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-auto h-auto bg-neutral-dark-brown rounded 
+                                    opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 pointer-events-none"
+                                >
+                                    <p className="text-white font-dm-sans font-bold text-center m-1 pointer-events-auto">{formatCurrency(item.amount)}</p>
+                                </div>
+                            </div>
                         ))}
                     </div>
                     <div className="grid grid-cols-7 gap-2 text-xs text-neutral-medium-brown">
