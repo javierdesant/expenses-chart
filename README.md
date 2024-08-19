@@ -54,5 +54,5 @@ In this project, I learned the following:
 
 ## Author
 
-- Github - [JavierDeSant](https://github.com/javierdesant)
+- LinkedIn - [Javier de Santiago Soto](https://www.linkedin.com/in/javierdesant/)
 - Frontend Mentor - [@javierdesant](https://www.frontendmentor.io/profile/javierdesant)
