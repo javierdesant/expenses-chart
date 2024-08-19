@@ -32,6 +32,9 @@ const Spending: FunctionComponent<SpendingProps> = ({ data, monthExpenses }) => 
                                 >
                                     <p className="text-white font-dm-sans font-bold text-center m-1 pointer-events-auto">{formatCurrency(item.amount)}</p>
                                 </div>
+
+                                {/* FIXME: Make hover functionality of the parent not to affect child's oppacity */}
+
                             </div>
                         ))}
                     </div>
