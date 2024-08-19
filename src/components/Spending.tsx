@@ -24,8 +24,8 @@ const Spending: FunctionComponent<SpendingProps> = ({ data, monthExpenses }) => 
                         {data.map((item: chartData) => (
                             <div 
                                 key={item.day} 
-                                className={`flex-1 rounded-sm`} 
-                                style={{ height: `${chartHeight(item.amount)}`, backgroundColor: isBarBlue(item.day) ? '#76b5bc' : '#ec775f' }}
+                                className={`flex-1 rounded-sm hover:opacity-80 transition-opacity duration-300 ease-in-out`} 
+                                style={{ height: `${chartHeight(item.amount)}`, backgroundColor: isBarBlue(item.day) ? '#76b5bc' : '#ec775f'}}
                             ></div>
                         ))}
                     </div>
